@@ -22,19 +22,27 @@ public class Aa_PunishmentNumber {
     }
 
     private static boolean isValidPartition(String str, int targetSum, int idx, int currentSum) {
+        // Base case: if we've used all digits, check if sum matches target
         if (idx == str.length()) {
             return currentSum == targetSum;
         }
 
         int num = 0;
+
+        // Try all possible partitions starting from current index
         for (int j = idx; j < str.length(); j++) {
-            num = num * 10 + (str.charAt(j) - '0');
+            num = num * 10 + (str.charAt(j) - '0'); // Extract substring as an integer
+
+            // If the sum exceeds the target, stop further recursion
+            if (num > targetSum) break;
+
+            // Recur for the next part of the string
             if (isValidPartition(str, targetSum, j + 1, currentSum + num)) {
                 return true;
             }
         }
 
-        return false;
+        return false;   // No valid partition found
     }
 
     public static void main(String[] args) {
