@@ -1,5 +1,17 @@
 //  https://leetcode.com/problems/find-the-punishment-number-of-an-integer/description/
 
+//  Explanation in-progress
+
+//  Explanation of "i² has at most 2 log(n) digits"
+//  The number of digits in a number x is given by: log10(x) + 1
+//  for x=9, log10(9) = 0.95 + 1 = 1 digit
+//  for x=100, log10(100) = 2 + 1 = 3 digit
+
+//  for i^2,
+//  log10(i^2) = 2log10(i)
+//  No of digits = 2 log10(i) + 1
+//
+
 package al_backtracking.external;
 
 public class Aa_PunishmentNumber {
