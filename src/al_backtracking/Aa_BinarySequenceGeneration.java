@@ -38,7 +38,7 @@ public class Aa_BinarySequenceGeneration {
     //  TOP-DOWN Approach
     //  Why?
     //  We start with the final result in mind (generating all sequences of length n).
-    //  We break it down into smaller subproblems, solving for n-1, n-2, ..., until n=1.
+    //  We break it down into smaller sub-problems, solving for n-1, n-2, ..., until n=1.
     //  Then, we combine the smaller solutions to get the final answer.
     //  TC: O(2ⁿ)
     //  SC: O(2ⁿ) -> The recursion depth is O(N); The list size grows to O(2ⁿ)
