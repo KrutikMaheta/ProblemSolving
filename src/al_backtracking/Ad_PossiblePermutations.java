@@ -21,6 +21,8 @@ public class Ad_PossiblePermutations {
         return result;
     }
 
+    //  TC: O(N!) in the worst case when all elements are different.
+    //  SC: O(N) used array, arr array & recursive stack space
     private static void collectPerms(List<List<Integer>> result, Integer[] nums, Integer[] arr, boolean[] used, int idx) {
         if (idx == arr.length) {
             result.add(Arrays.stream(arr).toList());
@@ -37,6 +39,8 @@ public class Ad_PossiblePermutations {
         }
     }
 
+    //  TC: O(N!) in the worst case when all elements are different.
+    //  SC: O(N) recursive stack space
     private static void possiblePermutationsSwapping(Integer[] arr, int index) {
         if (index == arr.length) {
             System.out.println(Arrays.toString(arr));
