@@ -4,9 +4,29 @@ import java.util.*;
 
 public class Ae_PossiblePermutationsDuplicates {
     public static void main(String[] args) {
-        int[] arr = {5, 5, 7};  // Example array with duplicates
+        int[] arr = {7, 5, 7};  // Example array with duplicates
+        possiblePermutationsSwapping(arr, 0);
         List<List<Integer>> result = possiblePermutations(arr);
         System.out.println(result);
+    }
+
+    private static void possiblePermutationsSwapping(int[] nums, int idx) {
+        if (idx == nums.length) {
+            System.out.println(Arrays.toString(nums));
+            return;
+        }
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int i = idx; i < nums.length; i++) {
+            if (set.contains(nums[i])) {
+                continue;
+            }
+            set.add(nums[i]);
+            swap(nums, i, idx);
+            possiblePermutationsSwapping(nums, idx + 1);
+            swap(nums, i, idx);
+        }
+
     }
 
     //  TC: O(N!) in the worst case when all elements are different.
@@ -16,11 +36,11 @@ public class Ae_PossiblePermutationsDuplicates {
         int[] arr = new int[nums.length];
         boolean[] used = new boolean[nums.length];
         Arrays.sort(nums);  // Sort the array to handle duplicates
-        backtrack(result, nums, arr, used, 0);
+        possiblePermutationsUtil(result, nums, arr, used, 0);
         return result;
     }
 
-    private static void backtrack(List<List<Integer>> result, int[] nums, int[] arr, boolean[] used, int index) {
+    private static void possiblePermutationsUtil(List<List<Integer>> result, int[] nums, int[] arr, boolean[] used, int index) {
         if (index == nums.length) {
             result.add(Arrays.stream(arr).boxed().toList());
             return;
@@ -38,8 +58,14 @@ public class Ae_PossiblePermutationsDuplicates {
 
             arr[index] = nums[i];
             used[i] = true;
-            backtrack(result, nums, arr, used, index + 1);
+            possiblePermutationsUtil(result, nums, arr, used, index + 1);
             used[i] = false;  // Backtrack and mark the element as unused
         }
+    }
+
+    private static void swap(int[] arr, int index, int i) {
+        int temp = arr[index];
+        arr[index] = arr[i];
+        arr[i] = temp;
     }
 }

@@ -40,16 +40,24 @@ public class Ad_PossiblePermutations {
     }
 
     //  TC: O(N!) in the worst case when all elements are different.
-    //  SC: O(N) recursive stack space
-    private static void possiblePermutationsSwapping(Integer[] arr, int index) {
-        if (index == arr.length) {
-            System.out.println(Arrays.toString(arr));
+    //  SC: O(N) recursive stack space -> In-place swapping hence some space-saving compared to previous approach
+    private static void possiblePermutationsSwapping(Integer[] nums, int index) {
+        // Base Case: If index reaches the end of the array, print the permutation
+        if (index == nums.length) {
+            System.out.println(Arrays.toString(nums));
             return;
         }
-        for (int i = index; i < arr.length; i++) {
-            swap(arr, index, i);
-            possiblePermutationsSwapping(arr, index + 1);
-            swap(arr, index, i);
+
+        // Loop through elements starting from 'index'
+        for (int i = index; i < nums.length; i++) {
+            // Swap element at 'index' with element at 'i'
+            swap(nums, index, i);
+
+            // Recur with the next index
+            possiblePermutationsSwapping(nums, index + 1);
+
+            // Backtrack: Swap back to restore original array state
+            swap(nums, index, i);
         }
     }
 
@@ -58,6 +66,4 @@ public class Ad_PossiblePermutations {
         arr[index] = arr[i];
         arr[i] = temp;
     }
-
-
 }
