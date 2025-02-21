@@ -10,7 +10,7 @@ public class Ae_PossiblePermutationsDuplicates {
         System.out.println(result);
     }
 
-    private static void possiblePermutationsSwapping(int[] nums, int idx) {
+    public static void possiblePermutationsSwapping(int[] nums, int idx) {
         if (idx == nums.length) {
             System.out.println(Arrays.toString(nums));
             return;
