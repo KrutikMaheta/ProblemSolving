@@ -1,4 +1,4 @@
-package al_backtracking;
+package al_backtracking.video;
 
 import java.util.ArrayList;
 import java.util.Arrays;

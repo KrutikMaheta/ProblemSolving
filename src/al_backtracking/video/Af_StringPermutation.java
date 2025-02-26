@@ -1,7 +1,7 @@
 /**
  * Write a program to find out all the permutations possible with the given string.
  */
-package al_backtracking;
+package al_backtracking.video;
 
 public class Af_StringPermutation {
 
