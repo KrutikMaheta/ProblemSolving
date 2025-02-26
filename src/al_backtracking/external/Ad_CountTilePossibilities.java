@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/letter-tile-possibilities/description/
 package al_backtracking.external;
 
-import al_backtracking.Ae_PossiblePermutationsDuplicates;
+import al_backtracking.video.Ae_PossiblePermutationsDuplicates;
 
 import java.util.Arrays;
 
