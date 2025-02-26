@@ -1,43 +1,45 @@
 package acd_prefixarray;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Ad_LargestSubArrWithEq0s1s {
 
     public static void main(String[] args) {
         int arr[] = {1, 0, 1, 1, 1, 0, 0};
         //int arr[] = { 0, 0, 1, 1, 0 };
-        largestSubArrWithEq0s1s(arr);
+        System.out.println(largestSubArrWithEq0s1s(arr));
     }
 
-    private static void largestSubArrWithEq0s1s(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0)
-                arr[i] = -1;
-        }
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int[] prefixArr = new int[arr.length];
-        int maxLenSA = Integer.MIN_VALUE;
-        int si = 0;
-        int ei = -1;
+    private static int largestSubArrWithEq0s1s(int[] arr) {
+        int maxLen = 0, prefixSum = 0, startIdx = -1, endIndex = -1;
+        Map<Integer, Integer> prefixSumIdxMap = new HashMap<>();
+
+        // Initialize HashMap with (0, -1) to handle cases where prefixSum itself is 0
+        prefixSumIdxMap.put(0, -1);
 
         for (int i = 0; i < arr.length; i++) {
-            prefixArr[i] = (i != 0) ? prefixArr[i - 1] + arr[i] : arr[i];
+            // Treat 0 as -1 for sum calculations
+            prefixSum += arr[i] == 0 ? -1 : 1;
 
-            if (prefixArr[i] == 0) {
-                si = 0;
-                ei = i;
-                maxLenSA = Integer.max(maxLenSA, i);
-            } else if (map.containsKey(prefixArr[i])) {
-                if ((ei - si) < i - map.get(prefixArr[i])) {
-                    si = map.get(prefixArr[i]) + 1;
-                    ei = i;
+            // If prefixSum is seen before, update max subarray length
+            if (prefixSumIdxMap.containsKey(prefixSum)) {
+                int prevIdx = prefixSumIdxMap.get(prefixSum);
+                int currentLen = i - prevIdx;
+                if (currentLen > maxLen) {
+                    maxLen = currentLen;
+                    startIdx = prevIdx + 1;
+                    endIndex = i;
                 }
             } else {
-                map.put(prefixArr[i], i);
+                // Store first occurrence of prefixSum
+                prefixSumIdxMap.put(prefixSum, i);
             }
         }
-        System.out.println(si + ":" + ei);
+
+        System.out.println("(Start Index : " + startIdx + ", End Index : " + endIndex + ")");
+
+        return maxLen;
     }
 
 }
