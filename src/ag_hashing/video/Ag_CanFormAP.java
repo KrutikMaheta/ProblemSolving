@@ -7,10 +7,9 @@
  */
 package ag_hashing.video;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
-public class Af_CanFormAP {
+public class Ag_CanFormAP {
 
     public static void main(String[] args) {
         int arr[] = {3, 5, 1, 9, 7, 13, 11};

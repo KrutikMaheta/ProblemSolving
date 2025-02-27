@@ -1,11 +1,10 @@
 package ag_hashing.video;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Ae_LongestConsequativeSeq {
+public class Af_LongestConsequativeSeq {
 
     public static void main(String[] args) {
         int arr[] = {3, 21, 33, 58, 34, 6, 32, 9, 30, 18, 31};
