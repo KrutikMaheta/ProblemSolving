@@ -1,4 +1,4 @@
-//  Leetcode 2964
+//  Leetcode 2964: https://leetcode.com/problems/number-of-divisible-triplet-sums/description/
 //  counting number of triplets divisible by k
 //  (a + b + c) % d == (a % d + b % d + c % d) % d;
 
@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Aa_TripletDivisibleByK {
-
 
     //  Algo:
     //  1. Create a hash map remainderCount to store the frequency of each remainder when elements of nums are divided by d.
@@ -35,8 +34,11 @@ public class Aa_TripletDivisibleByK {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 3, 5, 7, 12, 18};
-        int K = 6;
+        //int[] arr = {2, 3, 5, 7, 12, 18};
+        //int K = 6;
+
+        int[] arr = {3, 3, 3, 3};
+        int K = 3;
         System.out.println(countOfTripletsDivByK(arr, K));
     }
 
