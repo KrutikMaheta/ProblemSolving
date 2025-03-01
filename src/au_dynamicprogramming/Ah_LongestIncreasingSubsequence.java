@@ -54,14 +54,16 @@ public class Ah_LongestIncreasingSubsequence {
     }
 
 
-    //  TC: O(nlogN); SC: O(N)
+    //  TC: O(N logN); SC: O(N)
     //  This approach helps in finding length only
     //  Algorithm:
     //  1. We maintain a list called tail that stores the smallest possible tail of all increasing subsequences found so far.
-    //  2. For each element in the input array, we use binary search to find the position in tail where this element can replace an existing value or extend the subsequence.
+    //  2. For each element in the input array, we use binary search to find the position in tail where this element can replace
+    //  an existing value or extend the subsequence.
     //  3. If the element can replace an existing value in tail, it means we are updating the subsequence with a smaller tail value,
     //  which allows for potentially longer subsequences later.
     //  4. If the element is greater than all values in tail, it extends the longest increasing subsequence.
+    //  Note: We can't use tail array to get the LIS. Try: {3, 10, 2, 1, 20}
     private static int lengthOfLongestIncreasingSubsequence(int[] arr) {
         int n = arr.length;
 
@@ -104,12 +106,12 @@ public class Ah_LongestIncreasingSubsequence {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 3, 2, 3, 1, 5, 2};
+        //int[] arr = {1, 3, 2, 3, 1, 5, 2};
         //int[] arr = {1, 1, 1, 2, 2, 2, 1, 1, 1};
         //int[] arr = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
-        //int[] arr = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9};
-        System.out.println("Length of LIS: " + longestIncreasingSubsequence(arr));
-        //System.out.println("Length of LIS optimized: " + lengthOfLongestIncreasingSubsequence(arr));
+        int[] arr = {3, 10, 2, 1, 20};  //  tail will not give proper sequence for this input.
+        //System.out.println("Length of LIS: " + longestIncreasingSubsequence(arr));
+        System.out.println("Length of LIS optimized: " + lengthOfLongestIncreasingSubsequence(arr));
     }
 
 }
