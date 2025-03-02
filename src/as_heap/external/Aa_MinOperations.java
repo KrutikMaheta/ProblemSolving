@@ -3,7 +3,7 @@
 package as_heap.external;
 
 import java.util.PriorityQueue;
-public class MinOperations {
+public class Aa_MinOperations {
 
     private static int minOperations(int[] nums, int k) {
         int ops = 0;
