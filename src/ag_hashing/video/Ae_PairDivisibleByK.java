@@ -3,7 +3,7 @@ package ag_hashing.video;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Ae_PairWithDivisibleByK {
+public class Ae_PairDivisibleByK {
     public static void main(String[] args) {
         int[] arr = {1, 3, 7, 12, 24, 36, 4, 9};
         System.out.println(countPairsWithDivByK(arr, 4));
