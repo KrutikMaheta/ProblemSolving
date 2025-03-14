@@ -1,3 +1,6 @@
+//  https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description/
+//  2461. Maximum Sum of Distinct Subarrays With Length K
+
 package ace_slidingwindow.external;
 
 import java.util.HashMap;
@@ -17,38 +20,47 @@ public class Ac_MaxSumDistinctSubArraySizeK {
         System.out.println(maxSum(arr2, k));
     }
 
+    //  TC: O(N)
+    //  SC: O(K)
     private static long maxSum(int[] nums, int k) {
         int n = nums.length;
-        long sum = 0, maxSum = 0;
-        Map<Integer, Integer> map = new HashMap<>();
+        if (n < k) return 0;
 
-        int i;
-        for (i = 0; i < k; i++) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        long sum = 0;
+
+        // Initialize the first window
+        for (int i = 0; i < k; i++) {
             sum += nums[i];
-            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+            freq.put(nums[i], freq.getOrDefault(nums[i], 0) + 1);
         }
 
-        if (map.size() == k) {
-            maxSum = sum;
-        }
+        long maxSum = (freq.size() == k) ? sum : 0;
 
-        for (; i < n; i++) {
-            sum -= nums[i - k];
-            Integer count = map.get(nums[i - k]);
-            if (count != null) {
-                map.put(nums[i - k], count - 1);
-                if (count == 1) {
-                    map.remove(nums[i - k]);
-                }
+        // Slide the window through the array
+        for (int i = k; i < n; i++) {
+            int add = nums[i];
+            int remove = nums[i - k];
+
+            // Add the new element to the window
+            sum += add;
+            freq.put(add, freq.getOrDefault(add, 0) + 1);
+
+            // Remove the old element from the window
+            sum -= remove;
+            int count = freq.get(remove);
+            if (count == 1) {
+                freq.remove(remove);
+            } else {
+                freq.put(remove, count - 1);
             }
-            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
-            sum += nums[i];
 
-            if (map.size() == k) {
+            // Check if current window has all distinct elements
+            if (freq.size() == k) {
                 maxSum = Math.max(maxSum, sum);
             }
-
         }
+
         return maxSum;
     }
 
