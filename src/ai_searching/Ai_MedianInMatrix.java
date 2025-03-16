@@ -1,6 +1,6 @@
 package ai_searching;
 
-public class Ah_MedianInMatrix {
+public class Ai_MedianInMatrix {
 
     public static void main(String[] args) {
         //int arr[][] = { { 2, 5, 9, 13, 16 }, { 10, 11, 15, 18, 20 }, { 5, 13, 20, 21, 22 }, { 1, 6, 19, 24, 30 } };

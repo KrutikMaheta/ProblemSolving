@@ -1,7 +1,7 @@
-package aa_basicmaths;
+package ai_searching;
 
 
-public class B_SquareRoot {
+public class Ab_SquareRoot {
     public static void main(String[] args) {
         int num = 10;
         System.out.println("Square root of : " + num + " -> " + calculateSquareRoot(num));

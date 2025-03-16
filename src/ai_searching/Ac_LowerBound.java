@@ -1,6 +1,6 @@
 package ai_searching;
 
-public class Ab_LowerBound {
+public class Ac_LowerBound {
 
     public static void main(String[] args) {
         int arr[] = {1, 3, 5, 5, 7, 7, 7, 8, 8, 13, 15, 18, 21};

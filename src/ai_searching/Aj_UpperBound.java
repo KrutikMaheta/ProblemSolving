@@ -1,6 +1,6 @@
 package ai_searching;
 
-public class Ai_UpperBound {
+public class Aj_UpperBound {
 
     public static void main(String[] args) {
         int[] arr = {4, 7, 7, 7, 8, 9, 9, 9, 10, 10, 10, 11, 15, 18, 24};

@@ -1,7 +1,7 @@
 package ai_searching;
 
 // Case where we have applied binary search on non-sorted array.
-public class Ad_FindPeakElement {
+public class Ae_FindPeakElement {
 
     public static void main(String[] args) {
         //int[] arr = { 10, 9, 8, 7, 1, 2, 3, 4, 5, 6 };

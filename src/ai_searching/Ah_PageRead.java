@@ -6,7 +6,7 @@ package ai_searching;
 
 import java.util.Arrays;
 
-public class Ag_PageRead {
+public class Ah_PageRead {
 
     public static void main(String[] args) {
         int arr[] = {10, 5, 6, 9, 2, 8};

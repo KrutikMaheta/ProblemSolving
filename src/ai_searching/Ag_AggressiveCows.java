@@ -1,6 +1,6 @@
 package ai_searching;
 
-public class Af_AggressiveCows {
+public class Ag_AggressiveCows {
 
     /**
      * Binary search helper function to find the first position >= X in the array.

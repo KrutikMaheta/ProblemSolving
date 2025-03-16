@@ -1,6 +1,6 @@
 package ai_searching;
 
-public class Ac_FindNonRepeatedNum {
+public class Ad_FindNonRepeatedNum {
 
     public static void main(String[] args) {
         // int arr[] = { 0, 0, 4, 5, 5, 7, 7, 8, 8 };

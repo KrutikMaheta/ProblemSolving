@@ -4,7 +4,7 @@
 
 package ai_searching;
 
-public class Ae_MaxSizeSubArray {
+public class Af_MaxSizeSubArray {
 
     public static void main(String[] args) {
         int arr[] = {6, 17, 2, 4, 6, 8};
