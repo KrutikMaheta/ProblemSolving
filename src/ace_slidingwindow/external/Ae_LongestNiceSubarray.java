@@ -1,3 +1,8 @@
+//  https://leetcode.com/problems/longest-nice-subarray/description/
+//  2401. Longest Nice Subarray
+
+//  Try similar problem, 209. Minimum Size Subarray Sum -> https://leetcode.com/problems/minimum-size-subarray-sum/
+
 package ace_slidingwindow.external;
 
 public class Ae_LongestNiceSubarray {
