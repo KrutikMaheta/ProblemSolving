@@ -1,10 +1,5 @@
 //  Video Explanation: https://www.youtube.com/watch?v=fFVZt-6sgyo&ab_channel=NeetCode
 
-// Given an array, return count of possible sub arrays with exactly k odd elements.
-// [2,4,1,3,8] -> [1],[3],[2,4,1],[3,8],[4,1]
-// Convert even numbers to 0 and odd numbers to 1
-// The problem will become subarray with sum = k
-
 package acd_prefixarray;
 
 import java.util.HashMap;
