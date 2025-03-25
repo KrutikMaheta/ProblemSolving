@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class Ac_MinimumConferenceRoomRequired {
+public class Ac_MinimumMeetingRoomRequired {
 
     //  Incorrect code
     //  The code uses a simple greedy approach, checking only the immediately preceding meeting.

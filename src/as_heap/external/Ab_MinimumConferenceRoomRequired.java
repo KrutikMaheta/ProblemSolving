@@ -1,6 +1,6 @@
 package as_heap.external;
 
-import static acf_2pointers.external.Ac_MinimumConferenceRoomRequired.minConfRequiredHeap;
+import static acf_2pointers.external.Ac_MinimumMeetingRoomRequired.minConfRequiredHeap;
 
 public class Ab_MinimumConferenceRoomRequired {
 
